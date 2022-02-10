@@ -2,26 +2,27 @@ function redo () {
     game.splash("Please input a proper response (ex: \"yes\", \"no\")")
     game.reset()
 }
-function answerSets () {
-    if (answer == "yes") {
-        game.splash("You're good to go, then!")
-        game.over(true, effects.confetti)
-    } else if (answer == "no") {
-        answer = game.askForString("Would you like to create a savings plan?")
-        if (answer == "no") {
-            game.splash("You should think about your financial future.")
-            game.over(false, effects.dissolve)
-        } else if (answer == "yes") {
-            game.splash("test")
-        } else {
-            redo()
-        }
+let moneyChoices = [
+"It might be a good idea to put away some money every week",
+"Chances are you could put some money away every other week or so.",
+"Save money only when you're able to!",
+"That is... not a lot at all. You should consider another career path or get an actual job."
+]
+game.splash("Do you have 5-7 months worth of living expenses in a secure, liquid place?")
+let answer = game.askForString("For this program, please respond in lowercase.")
+if (answer == "yes") {
+    game.splash("You're good to go, then!")
+    game.over(true, effects.confetti)
+} else if (answer == "no") {
+    answer = game.askForString("Would you like to create a savings plan?")
+    if (answer == "no") {
+        game.splash("You should think about your financial future.")
+        game.over(false, effects.dissolve)
+    } else if (answer == "yes") {
+        answer = game.askForString("What is your income?")
     } else {
         redo()
     }
+} else {
+    redo()
 }
-let answer = ""
-let yesNO = ["yes", "no"]
-game.splash("Do you have 5-7 months worth of money in a secure, liquid place?")
-answer = game.askForString("For this program, please respond in lowercase.")
-answerSets()
