@@ -1,10 +1,13 @@
 function yesNo1 () {
     if (answer == "yes") {
-    	
-    } else if (answer == "no") {
         game.splash("You're good to go, then!")
         game.over(true, effects.confetti)
+    } else if (answer == "no") {
         game.splash("Would you like to create a savings plan?")
+        step += 1
+        if (true) {
+        	
+        }
     } else {
         game.splash("Please input a proper response (ex: \"yes\", \"no\")")
         game.reset()
