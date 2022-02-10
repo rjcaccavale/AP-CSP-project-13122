@@ -1,1 +1,1 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id="Mg.|DKp37GW-C#IQ0gy:" x="0" y="0"/></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id="biu6a0qk7scqiGn_J(1?" x="0" y="0"><statement name="HANDLER"><block type="gameSplash" id="!z4s5CqlHre:-x_47B@z"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="title"><shadow type="text" id="FrCI0RKX|%DUZoA[CS5*"><field name="TEXT">for this program, </field></shadow></value></block></statement></block></xml>
