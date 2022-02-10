@@ -1,7 +1,13 @@
+function Dmoney () {
+    if (0 == 0) {
+    	
+    }
+}
 function redo () {
     game.splash("Please input a proper response (ex: \"yes\", \"no\")")
     game.reset()
 }
+let answer2 = 0
 let moneyChoices = [
 "It might be a good idea to put away some money every week",
 "Chances are you could put some money away every other week or so.",
@@ -9,7 +15,7 @@ let moneyChoices = [
 "That is... not a lot at all. You should consider another career path or get an actual job."
 ]
 game.splash("Do you have 5-7 months worth of living expenses in a secure, liquid place?")
-let answer = game.askForString("For this program, please respond in lowercase.")
+let answer = game.askForString("Please respond in lowercase.")
 if (answer == "yes") {
     game.splash("You're good to go, then!")
     game.over(true, effects.confetti)
@@ -19,7 +25,8 @@ if (answer == "yes") {
         game.splash("You should think about your financial future.")
         game.over(false, effects.dissolve)
     } else if (answer == "yes") {
-        answer = game.askForString("What is your income?")
+        game.splash("What is your monthly income?")
+        answer2 = game.askForNumber("", 7)
     } else {
         redo()
     }
