@@ -2,6 +2,11 @@ function redo () {
     game.splash("Please input a proper response (ex: \"yes\", \"no\")")
     game.reset()
 }
+function moneyQ () {
+    game.splash("After monthly expenses, how much money do you have left?")
+    money = game.askForNumber("")
+}
+let money = 0
 let moneyChoices = [
 "It might be a good idea to put away some money every week",
 "Chances are you could put some money away every other week or so.",
@@ -19,10 +24,14 @@ if (answer == "yes") {
         game.splash("You should think about your financial future.")
         game.over(false, effects.dissolve)
     } else if (answer == "yes") {
-        answer = game.askForString("What is your income?")
+        moneyQ()
     } else {
         redo()
     }
 } else {
     redo()
+}
+while (money < 50) {
+    game.splash("broke")
+    moneyQ()
 }
