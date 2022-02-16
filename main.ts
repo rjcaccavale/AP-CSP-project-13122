@@ -35,3 +35,6 @@ while (money < 50) {
     game.splash("broke")
     moneyQ()
 }
+if (money == 50) {
+    game.splash("")
+}
